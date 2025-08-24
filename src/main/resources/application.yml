@@ -1,0 +1,69 @@
+spring:
+  application:
+    name: doudizhu
+  
+  # Jackson配置
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    time-zone: GMT+8
+  
+  # 数据库配置
+  datasource:
+    url: jdbc:mysql://124.223.16.249:3306/garydatabase?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
+    username: gary_user
+    password: F5HDqarx
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+  
+  # JPA配置
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+  
+  # Redis配置
+  redis:
+    cluster:
+      nodes:
+        - 124.223.16.249:7000
+        - 124.223.16.249:7001
+        - 124.223.16.249:7002
+      max-redirects: 3
+    password: F5HDqarx
+    timeout: 3000ms
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: 3000ms
+
+# 服务器配置
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+# JWT配置
+jwt:
+  secret: doudizhuSecretKeyForJWTTokenGeneration2024
+  expiration: 86400000 # 24小时
+
+# 日志配置
+logging:
+  level:
+    com.doudizhu: DEBUG
+    org.springframework.web: DEBUG
+    org.hibernate.SQL: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
