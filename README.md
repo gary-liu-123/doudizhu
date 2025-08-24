@@ -78,7 +78,7 @@ mvn spring-boot:run
 # 进入前端目录
 cd frontend
 
-# 安装依赖
+# 安装依赖（如已经安装，则跳过此命令）
 npm install
 
 # 启动开发服务器
