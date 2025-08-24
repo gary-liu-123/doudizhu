@@ -1,0 +1,182 @@
+.bidding-panel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 2px solid #FFD700;
+  min-width: 350px;
+  text-align: center;
+  z-index: 100;
+}
+
+.bidding-header {
+  margin-bottom: 20px;
+}
+
+.bidding-header h3 {
+  margin: 0 0 10px 0;
+  color: #1B5E20;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.current-bid {
+  margin: 0;
+  color: #D32F2F;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.bidding-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.countdown-timer {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FF6B6B, #FF5252);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+  animation: pulse-timer 1s infinite;
+}
+
+.timer-text {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+@keyframes pulse-timer {
+  0% { box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4); }
+  50% { box-shadow: 0 4px 20px rgba(255, 107, 107, 0.8); }
+  100% { box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4); }
+}
+
+.bid-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.bid-button {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.bid-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.5);
+}
+
+.bid-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.bid-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.pass-button {
+  width: 80px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #FF9800, #F57C00);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+}
+
+.pass-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 152, 0, 0.5);
+}
+
+.pass-button:active {
+  transform: translateY(0);
+}
+
+.waiting-for-bid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.waiting-for-bid p {
+  margin: 0;
+  color: #666;
+  font-size: 16px;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #FFD700;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+  .bidding-panel {
+    min-width: 280px;
+    padding: 15px;
+  }
+  
+  .bid-buttons {
+    gap: 10px;
+  }
+  
+  .bid-button {
+    width: 50px;
+    height: 50px;
+    font-size: 14px;
+  }
+  
+  .countdown-timer {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .timer-text {
+    font-size: 16px;
+  }
+}

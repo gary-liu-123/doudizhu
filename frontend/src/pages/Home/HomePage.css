@@ -1,0 +1,235 @@
+.home-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1B5E20, #2E7D32);
+}
+
+.home-container {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.home-header {
+  margin-bottom: 60px;
+}
+
+.game-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.game-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0;
+}
+
+.home-main {
+  margin-bottom: 60px;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.btn {
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: none;
+  min-height: 60px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #FFD700, #FFA000);
+  color: #1B5E20;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, #FFA000, #FF8F00);
+}
+
+.btn-secondary {
+  background: linear-gradient(45deg, #42A5F5, #1976D2);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(45deg, #1976D2, #1565C0);
+}
+
+.btn-accent {
+  background: linear-gradient(45deg, #66BB6A, #4CAF50);
+  color: white;
+}
+
+.btn-accent:hover {
+  background: linear-gradient(45deg, #4CAF50, #388E3C);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.user-stats {
+  display: flex;
+  justify-content: space-around;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.home-footer {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+
+.name-input-form {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  margin-bottom: 40px;
+}
+
+.name-input-form h3 {
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  background: white;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.form-input::placeholder {
+  color: #999;
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+.form-actions .btn {
+  flex: 1;
+  padding: 12px 20px;
+  font-size: 16px;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .name-input-form {
+    padding: 20px;
+  }
+  
+  .form-input {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  
+  .form-actions .btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
+
+/* 原有样式保持不变 */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 20px;
+  }
+  
+  .game-title {
+    font-size: 2rem;
+  }
+  
+  .game-subtitle {
+    font-size: 1rem;
+  }
+  
+  .btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    min-height: 50px;
+  }
+  
+  .user-stats {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .stat-item {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
